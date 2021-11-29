@@ -11,9 +11,10 @@ async function fetchGoals() {
 	allGoals.forEach(function (id, name) {
 		console.log('object inside', id);
 		document.querySelector('.goals').innerHTML += `
+		<div class="cards">
       <h1>${id.name}</h1>
       <h3>${id.description}</h3>
-      
+		</div>
     `;
 	});
 }
@@ -24,6 +25,15 @@ async function fetchGoalPackage() {
 	const response = await fetch(goalPackages);
 	const data = await response.json();
 	console.log('these are packagaes', data);
+	let allPackages = data;
+	allPackages.forEach(function (id, name) {
+		document.querySelector(`.goal-packages`).innerHTML += `
+		<div class="cards">
+		<h1>${id.name}</h1>
+      <h3>${id.description}</h3>
+	  </div>
+		`;
+	});
 }
 
 fetchGoalPackage();
@@ -33,6 +43,15 @@ async function fetchExtras() {
 	const response = await fetch(extras);
 	const data = await response.json();
 	console.log('These are extras', data);
+	let allExtras = data;
+	allExtras.forEach(function (id, name) {
+		document.querySelector(`.extras`).innerHTML += `
+		<div class="cards">
+		<h1>${id.name}</h1>
+      <h3>${id.description}</h3>
+	  </div>
+		`;
+	});
 }
 
 fetchExtras();
