@@ -3,9 +3,9 @@ function liveSearch() {
 	let search_query = document.getElementById('searchbox').value;
 	for (var i = 0; i < cards.length; i++) {
 		if (cards[i].innerText.toLowerCase().includes(search_query.toLowerCase())) {
-			cards[i].classList.remove('is-hidden');
+			cards[i].classList.remove('hidden');
 		} else {
-			cards[i].classList.add('is-hidden');
+			cards[i].classList.add('hidden');
 		}
 	}
 }

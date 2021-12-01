@@ -21,7 +21,9 @@ export function goalRender(goals) {
 	productCard.innerHTML = `
         <h1>${goals.name}</h1>
         <p>${goals.price}</p>
+		<a class="mere__info" href="productDetails.html?id=/${goals.id}">Mere informasjon</a>
         <button id="${button_id}">
+		<p class="card__text">Legg til i kurven</P>
         <i class="fas fa-shopping-cart" data-name="${goals.name}" data-price="${goals.Price}"></i>
         </button>
     `;

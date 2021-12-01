@@ -1,3 +1,6 @@
-.is-hidden {
+@import './libs/cards.css';
+@import './libs/btns.css';
+
+.hidden {
 	display: none;
 }
