@@ -1,27 +1,74 @@
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get('id');
-async function getProducts() {
+async function getGoals() {
 	console.log();
 
 	try {
-		const response = await fetch('http://localhost:1337/goals' + id);
-		const jsonResults = await response.json();
-		const value = jsonResults.goals;
-		console.log(response);
-
-		document.title = jsonResults.goals;
+		const responseGoals = await fetch(
+			'https://funtoplay.herokuapp.com/Goals' + id
+		);
+		const jsonResults = await responseGoals.json();
+		const value = jsonResults;
+		console.log(value);
+		document.title = jsonResults.name;
 		document.querySelector('main').innerHTML += `
 <div class="#">
 <img class="#" src="#" />
-<div class="cardThree">
 <h3>${value.name}</h3>
-<p>Instructions: ${value.price}</p>
-</div>
+<p>price: ${value.price}</p>
 </div>
 `;
 	} catch (error) {
 	} finally {
 	}
 }
-getProducts(id);
+getGoals();
+
+async function getGoalPackages() {
+	console.log();
+
+	try {
+		const responseGoalPackages = await fetch(
+			'https://funtoplay.herokuapp.com/Goal-packages' + id
+		);
+		const jsonResults = await responseGoalPackages.json();
+		const value = jsonResults;
+		console.log(value);
+		document.title = jsonResults.name;
+		document.querySelector('main').innerHTML += `
+<div class="#">
+<img class="#" src="#" />
+<h3>${value.name}</h3>
+<p>price: ${value.price}</p>
+</div>
+`;
+	} catch (error) {
+	} finally {
+	}
+}
+getGoalPackages();
+
+async function responseExtras() {
+	console.log();
+
+	try {
+		const responseExtras = await fetch(
+			'https://funtoplay.herokuapp.com/Extras' + id
+		);
+		const jsonResults = await responseExtras.json();
+		const value = jsonResults;
+		console.log(value);
+		document.title = jsonResults.name;
+		document.querySelector('main').innerHTML += `
+<div class="#">
+<img class="#" src="#" />
+<h3>${value.name}</h3>
+<p>price: ${value.price}</p>
+</div>
+`;
+	} catch (error) {
+	} finally {
+	}
+}
+responseExtras();

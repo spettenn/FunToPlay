@@ -1,6 +1,8 @@
 @import './libs/cards.css';
 @import './libs/btns.css';
 
-.hidden {
-	display: none;
+/* Color pallets and variables  */
+:root {
+	--mainColor: #70BF48;
+	--secondaryColor:#2F4858:
 }

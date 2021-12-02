@@ -1,6 +1,6 @@
-const goals_URL = 'http://localhost:1337/Goals';
-const goalPackages_URL = 'http://localhost:1337/Goal-packages';
-const extras_URL = 'http://localhost:1337/Extras';
+const goals_URL = 'https://funtoplay.herokuapp.com/Goals';
+const goalPackages_URL = 'https://funtoplay.herokuapp.com/Goal-packages';
+const extras_URL = 'https://funtoplay.herokuapp.com/Extras';
 
 // Single Goal api fetch with add to local storage
 export async function getGoals() {
@@ -66,7 +66,9 @@ export function goalPackageRender(goalPackage) {
 	productCard.innerHTML = `
         <h1>${goalPackage.name}</h1>
         <p>${goalPackage.price}</p>
+		<a class="mere__info" href="productDetails.html?id=/${goalPackage.id}">Mere informasjon</a>
         <button id="${button_id}">
+		<p class="card__text">Legg til i kurven</P>
         <i class="fas fa-shopping-cart" data-name="${goalPackage.name}" data-price="${goalPackage.Price}"></i>
         </button>
     `;
@@ -109,7 +111,9 @@ export function extrasRender(extras) {
 	productCard.innerHTML = `
         <h1>${extras.name}</h1>
         <p>${extras.price}</p>
+		<a class="mere__info" href="productDetails.html?id=/${extras.id}">Mere informasjon</a>
         <button id="${button_id}">
+		<p class="card__text">Legg til i kurven</P>
         <i class="fas fa-shopping-cart" data-name="${extras.name}" data-price="${extras.Price}"></i>
         </button>
     `;
