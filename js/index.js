@@ -8,4 +8,4 @@ import {
 
 const favorites = getStoredFavorites();
 
-console.log(favorites);
+console.log('these are the stored localStorage ', favorites);

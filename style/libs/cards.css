@@ -1,4 +1,53 @@
 .cards {
 	display: flex;
 	flex-direction: column;
+	margin: 1rem;
+
+	text-align: center;
+}
+.goals {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.goal-packages {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.extras {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.cart__btn {
+	background-color: var(--mainColor);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	border: none;
+	height: 2rem;
+	color: white;
+	padding-top: 3px;
+}
+.mere__info {
+	background-color: var(--secondaryColor);
+	display: flex;
+	justify-content: center;
+	height: 2rem;
+	width: 100%;
+	text-decoration: none;
+	color: white;
+	border: none;
+}
+.card__title {
+	color: var(--secondaryColor);
+	font-size: 1.5rem;
+}
+.fa-shopping-cart {
+	margin-top: 4px;
+}
+.sponsor {
+	display: flex;
+	flex-direction: row;
 }

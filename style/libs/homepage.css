@@ -1,0 +1,7 @@
+body {
+}
+
+#forKlubber {
+	background-color: var(--secondaryColor);
+	height: 20rem;
+}

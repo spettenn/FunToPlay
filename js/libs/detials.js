@@ -1,12 +1,11 @@
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
-const id = params.get('id');
+const mainSlug = params.get('slug');
+console.log(mainSlug);
 async function getGoals() {
-	console.log();
-
 	try {
 		const responseGoals = await fetch(
-			'https://funtoplay.herokuapp.com/Goals' + id
+			'https://funtoplay.herokuapp.com/Goals' + mainSlug
 		);
 		const jsonResults = await responseGoals.json();
 		const value = jsonResults;
@@ -14,7 +13,6 @@ async function getGoals() {
 		document.title = jsonResults.name;
 		document.querySelector('main').innerHTML += `
 <div class="#">
-<img class="#" src="#" />
 <h3>${value.name}</h3>
 <p>price: ${value.price}</p>
 </div>
@@ -30,7 +28,7 @@ async function getGoalPackages() {
 
 	try {
 		const responseGoalPackages = await fetch(
-			'https://funtoplay.herokuapp.com/Goal-packages' + id
+			'https://funtoplay.herokuapp.com/Goal-packages' + mainSlug
 		);
 		const jsonResults = await responseGoalPackages.json();
 		const value = jsonResults;
@@ -38,7 +36,6 @@ async function getGoalPackages() {
 		document.title = jsonResults.name;
 		document.querySelector('main').innerHTML += `
 <div class="#">
-<img class="#" src="#" />
 <h3>${value.name}</h3>
 <p>price: ${value.price}</p>
 </div>
@@ -54,7 +51,7 @@ async function responseExtras() {
 
 	try {
 		const responseExtras = await fetch(
-			'https://funtoplay.herokuapp.com/Extras' + id
+			'https://funtoplay.herokuapp.com/Extras' + mainSlug
 		);
 		const jsonResults = await responseExtras.json();
 		const value = jsonResults;
@@ -62,7 +59,6 @@ async function responseExtras() {
 		document.title = jsonResults.name;
 		document.querySelector('main').innerHTML += `
 <div class="#">
-<img class="#" src="#" />
 <h3>${value.name}</h3>
 <p>price: ${value.price}</p>
 </div>

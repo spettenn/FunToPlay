@@ -1,8 +1,13 @@
 @import './libs/cards.css';
 @import './libs/btns.css';
+@import './libs/banner.css';
+@import './libs/homepage.css';
 
 /* Color pallets and variables  */
 :root {
-	--mainColor: #70BF48;
-	--secondaryColor:#2F4858:
+	--mainColor: #70bf48;
+	--secondaryColor: #2f4858;
+}
+.hidden {
+	display: none;
 }

@@ -13,16 +13,19 @@ export async function getGoals() {
 getGoals().then((goals) => goals.forEach(goalRender));
 
 export function goalRender(goals) {
-	const button_id = `cart-button-${goals.id}`;
+	const button_id = `cart-button-${goals.slug}`;
 
 	const productCard = document.createElement('div');
 
 	productCard.classList.add('cards');
+	console.log('Hello', goals.image.formats);
 	productCard.innerHTML = `
-        <h1>${goals.name}</h1>
-        <p>${goals.price}</p>
-		<a class="mere__info" href="productDetails.html?id=/${goals.id}">Mere informasjon</a>
-        <button id="${button_id}">
+	
+	<img src="${goals.image[15]}"/>
+        <h1 class="card__title">${goals.name}</h1>
+        <p class="card__price">${goals.price}</p>
+		<a class="mere__info" href="productDetails.html?slug=/${goals.slug}">Mere informasjon</a>
+        <button class="cart__btn" id="${button_id}">
 		<p class="card__text">Legg til i kurven</P>
         <i class="fas fa-shopping-cart" data-name="${goals.name}" data-price="${goals.Price}"></i>
         </button>
@@ -33,7 +36,7 @@ export function goalRender(goals) {
 	const cartButton = document.getElementById(button_id);
 	cartButton.onclick = () => {
 		let favorites = getStoredFavorites();
-		const isAdded = favorites.some((item) => item.id === goals.id);
+		const isAdded = favorites.some((item) => item.slug === goals.slug);
 
 		if (isAdded) {
 			const index = favorites.indexOf(goals);
@@ -58,16 +61,16 @@ export async function getGoalPackage() {
 getGoalPackage().then((goalPackage) => goalPackage.forEach(goalPackageRender));
 
 export function goalPackageRender(goalPackage) {
-	const button_id = `cart-button-${goalPackage.id}`;
+	const button_id = `cart-button-${goalPackage.slug}`;
 
 	const productCard = document.createElement('div');
 
 	productCard.classList.add('cards');
 	productCard.innerHTML = `
-        <h1>${goalPackage.name}</h1>
-        <p>${goalPackage.price}</p>
-		<a class="mere__info" href="productDetails.html?id=/${goalPackage.id}">Mere informasjon</a>
-        <button id="${button_id}">
+        <h1 class="card__title">${goalPackage.name}</h1>
+        <p class="card__price">${goalPackage.price}</p>
+		<a class="mere__info" href="productDetails.html?slug=/${goalPackage.slug}">Mere informasjon</a>
+        <button class="cart__btn" id="${button_id}">
 		<p class="card__text">Legg til i kurven</P>
         <i class="fas fa-shopping-cart" data-name="${goalPackage.name}" data-price="${goalPackage.Price}"></i>
         </button>
@@ -78,7 +81,7 @@ export function goalPackageRender(goalPackage) {
 	const cartButton = document.getElementById(button_id);
 	cartButton.onclick = () => {
 		let favorites = getStoredFavorites();
-		const isAdded = favorites.some((item) => item.id === goalPackage.id);
+		const isAdded = favorites.some((item) => item.slug === goalPackage.slug);
 
 		if (isAdded) {
 			const index = favorites.indexOf(goalPackage);
@@ -103,16 +106,16 @@ export async function getExtras() {
 getExtras().then((extras) => extras.forEach(extrasRender));
 
 export function extrasRender(extras) {
-	const button_id = `cart-button-${extras.id}`;
+	const button_id = `cart-button-${extras.slug}`;
 
 	const productCard = document.createElement('div');
 
 	productCard.classList.add('cards');
 	productCard.innerHTML = `
-        <h1>${extras.name}</h1>
-        <p>${extras.price}</p>
-		<a class="mere__info" href="productDetails.html?id=/${extras.id}">Mere informasjon</a>
-        <button id="${button_id}">
+        <h1 class="card__title">${extras.name}</h1>
+        <p class="card__price">${extras.price}</p>
+		<a class="mere__info" href="productDetails.html?slug=/${extras.slug}">Mere informasjon</a>
+        <button class="cart__btn" id="${button_id}">
 		<p class="card__text">Legg til i kurven</P>
         <i class="fas fa-shopping-cart" data-name="${extras.name}" data-price="${extras.Price}"></i>
         </button>
@@ -123,7 +126,7 @@ export function extrasRender(extras) {
 	const cartButton = document.getElementById(button_id);
 	cartButton.onclick = () => {
 		let favorites = getStoredFavorites();
-		const isAdded = favorites.some((item) => item.id === extras.id);
+		const isAdded = favorites.some((item) => item.slug === extras.slug);
 
 		if (isAdded) {
 			const index = favorites.indexOf(extras);

@@ -1,0 +1,66 @@
+.banner {
+	height: 43rem;
+}
+.view {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 70px;
+	transform: skew(-5deg);
+	border: 1px solid black;
+	height: 40rem;
+	border-top: none;
+	border-bottom: none;
+}
+
+.left,
+.right {
+	bottom: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+}
+
+.left {
+	left: -5%;
+	right: 50%;
+}
+
+.divider {
+	background-color: black;
+	border-right: solid 1px #000;
+	bottom: 0%;
+	left: 49.9%;
+	position: absolute;
+	right: 50%;
+	top: 0%;
+	z-index: 1;
+}
+
+.right {
+	left: 50%;
+	right: -5%;
+}
+
+.spillere,
+.klubber {
+	bottom: -5%;
+	left: -5%;
+	position: absolute;
+	right: -5%;
+	top: -5%;
+	transform: skew(5deg);
+}
+
+.spillere {
+	background: url(../../media/banner-spillere.jpg);
+	background-position: center center;
+	background-size: cover;
+}
+
+.klubber {
+	background: url(../../media/banner-klubber.jpg);
+	background-position: center center;
+	background-size: cover;
+}
