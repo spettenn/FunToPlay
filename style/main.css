@@ -4,6 +4,7 @@
 @import './libs/homepage.css';
 @import './libs/navigation.css';
 @import './libs/footer.css';
+@import './libs/login.css';
 
 /* Color pallets and variables  */
 :root {

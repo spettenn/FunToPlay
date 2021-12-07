@@ -10,33 +10,42 @@
 			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 			crossorigin="anonymous"
 		/>
+		<link rel="stylesheet" href="/style/main.css" />
 		<title>Document</title>
 	</head>
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12">
-					<div class="alert"></div>
+				<div class="col-sm-12 logo__wrapper">
+					<img src="media/funtoplay-logo.jpg" class="logo__loginPage" />
 				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
 				<div class="col-sm-12">
-					<h1>Login to our application</h1>
-				</div>
-				<div class="col-sm-6">
-					<form class="form">
-						<div class="mb-3">
-							<label for="exampleInputEmail1" class="form-label"
-								>Email address</label
-							>
-							<input type="input" class="form-control" id="email" />
-						</div>
-						<div class="mb-3">
-							<label for="exampleInputPassword1" class="form-label"
-								>Password</label
-							>
-							<input type="password" class="form-control" id="password" />
-						</div>
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</form>
+					<div class="wrapper__form">
+						<img src="media/configLogo.png" class="config__img" />
+						<form class="form">
+							<div class="mb-3">
+								<input
+									type="input"
+									class="form-input"
+									id="email"
+									placeholder="BRUKERNAVN"
+								/>
+							</div>
+							<div class="mb-3">
+								<input
+									type="password"
+									class="form-input"
+									id="password"
+									placeholder="PASSORD"
+								/>
+							</div>
+							<button type="submit" class="btn__submit">Login</button>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
