@@ -1,12 +1,14 @@
 const goals_URL = 'https://funtoplay.herokuapp.com';
-const strapiAccessToken = localStorage.getItem('jwt');
-const form = document.querySelector('.form');
-// header to prove you are logged in and have the right authentication
+const strapiAccessToken = localStorage.getItem('strapi-access-token');
+console.log('This is user key: ' + strapiAccessToken);
+const form = document.querySelector('#form');
 
-//let productForm = document.querySelector('.form');
+if (!strapiAccessToken) {
+	window.location.replace('/login.html');
+}
 
 form.onsubmit = async function (event) {
-	const data = new FormData(document.querySelector('.form'));
+	const data = new FormData(document.querySelector('#form'));
 
 	event.preventDefault();
 	const name = data.get('name');
@@ -21,14 +23,13 @@ form.onsubmit = async function (event) {
 			Authorization: `Bearer ${strapiAccessToken}`,
 		},
 		body: JSON.stringify({
-			Name: name,
-			Description: description,
-			Price: price,
-			Image: image,
+			name: name,
+			description: description,
+			price: price,
+			image: image,
 		}),
 	});
 	if (!response.ok) {
-		// Handle error here
 		const errorResponse = await response.json();
 		console.error(errorResponse);
 		throw new Error('REEEEEEEEEEE');
@@ -36,3 +37,39 @@ form.onsubmit = async function (event) {
 
 	console.log(await response.json());
 };
+/*
+const headers = {
+	headers: {
+		'Content-Type': 'application/json',
+		Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+	},
+};
+form.onsubmit = async function (event) {
+	event.preventDefault();
+	const name = document.querySelector('.name');
+	const description = document.querySelector('.description');
+	const price = document.querySelector('.price');
+
+	try {
+		let newProduct = {
+			Name: name.value,
+			Description: description.value,
+			Price: price.value,
+		};
+
+		let response = await axios.post(
+			`https://funtoplay.herokuapp.com/Goals`,
+			newProduct,
+			headers
+		);
+		alert('alert-success', 'Car has been created successfully');
+		name.value = '';
+		description.value = '';
+		price.value = '';
+
+		console.log(response);
+	} catch (error) {
+		alert('alert-danger', 'There was an error creating your car');
+	}
+};
+*/
