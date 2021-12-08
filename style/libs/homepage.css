@@ -1,7 +1,54 @@
 body {
 }
 
+.sponsor__container {
+	height: fit-content;
+	padding-top: 1rem;
+}
+.sponsor {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+/* FOR "Spiller" SECTION */
+.spiller__title {
+	text-align: center;
+	color: var(--secondaryColor);
+	font-size: 2rem;
+}
+
+/* FOR "KLUBBER" SECTION */
 #forKlubber {
 	background-color: var(--secondaryColor);
-	height: 20rem;
+	height: fit-content;
+}
+.klubb__info {
+	text-align: center;
+	height: fit-content;
+}
+.klubb__infoTwo {
+	background-color: var(--mainColor);
+	text-align: center;
+	height: fit-content;
+}
+#klubb__info__textTwo {
+	color: var(--secondaryColor);
+	font-size: 1.5rem;
+}
+#klubb__info__text {
+	color: white;
+	font-size: 1.1rem;
+}
+#klubb__title {
+	color: white;
+	text-align: center;
+	margin-top: 1rem;
+	font-size: 2rem;
+}
+.klubb__img__container {
+	display: flex;
+	justify-content: center;
+}
+.img__klubb {
+	margin: auto;
 }

@@ -27,7 +27,7 @@ export function goalRender(goals) {
 		<a class="mere__info" href="productDetails.html?slug=/${goals.slug}">Mere informasjon</a>
         <button class="cart__btn" id="${button_id}">
 		<p class="card__text">Legg til i kurven</P>
-        <i class="fas fa-shopping-cart" data-name="${goals.name}" data-price="${goals.Price}"></i>
+        <i class="fas fa-shopping-cart" data-name="${goals.name}" data-slug="${goals.slug}" data-price="${goals.Price}"></i>
         </button>
     `;
 
@@ -72,7 +72,7 @@ export function goalPackageRender(goalPackage) {
 		<a class="mere__info" href="productDetails.html?slug=/${goalPackage.slug}">Mere informasjon</a>
         <button class="cart__btn" id="${button_id}">
 		<p class="card__text">Legg til i kurven</P>
-        <i class="fas fa-shopping-cart" data-name="${goalPackage.name}" data-price="${goalPackage.Price}"></i>
+        <i class="fas fa-shopping-cart" data-name="${goalPackage.name}" data-slug="${goalPackage.slug}" data-price="${goalPackage.Price}"></i>
         </button>
     `;
 
@@ -117,7 +117,7 @@ export function extrasRender(extras) {
 		<a class="mere__info" href="productDetails.html?slug=/${extras.slug}">Mere informasjon</a>
         <button class="cart__btn" id="${button_id}">
 		<p class="card__text">Legg til i kurven</P>
-        <i class="fas fa-shopping-cart" data-name="${extras.name}" data-price="${extras.Price}"></i>
+        <i class="fas fa-shopping-cart" data-name="${extras.name}" data-slug="${extras.slug}" data-price="${extras.Price}"></i>
         </button>
     `;
 

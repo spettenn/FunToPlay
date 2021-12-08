@@ -47,7 +47,38 @@
 .fa-shopping-cart {
 	margin-top: 4px;
 }
-.sponsor {
+
+.spiller__card__wrapper {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-evenly;
+	height: fit-content;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border: 1px solid gray;
+	box-shadow: 3px 2px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.spiller__img__wrapper {
+	display: flex;
+	justify-content: center;
+	width: 40%;
+}
+.spiller__img {
+}
+.spiller__info__wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	width: 40%;
+	padding: 1rem;
+}
+.spiller__card__title {
+	font-size: 2rem;
+	text-align: center;
+}
+.spiller__info__text {
+	font-size: 1.5rem;
+}
+.spiller__description__text {
+	font-size: 1rem;
 }

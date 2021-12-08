@@ -18,36 +18,46 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<nav>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
 			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<img src="./media/funtoplayLogo_small.png" />
-					</div>
-					<div class="col-sm-6">
-						<ul class="nav justify-content-end">
-							<li class="nav-item">
-								<a class="nav-link" href="#">Produkter</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Montering</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Kjøpsbetingelser</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href=""
-									><i class="fas fa-shopping-cart"></i
-								></a>
-							</li>
-						</ul>
-						<div class="burger">
-							<span class="bar"></span>
-							<span class="bar"></span>
-							<span class="bar"></span>
-							<span class="bar"></span>
-						</div>
-					</div>
+				<a class="navbar-brand" href="/home.html">
+					<img
+						src="/media/funtoplayLogo_small.png"
+						alt="logor for fun to play"
+						height="36"
+					/>
+				</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="./products.html">Produkter</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Montering</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Kjøpsbetingelser</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Kontakt oss</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link nav__cart" href="./cart.html"
+								><i class="fas fa-shopping-cart"></i
+							></a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</nav>
@@ -72,7 +82,7 @@
 				</div>
 			</div>
 		</section>
-		<div class="container">
+		<div class="container sponsor__container">
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="sponsor">
@@ -81,8 +91,9 @@
 							<p>
 								Ønsker du å sponse Norges bredde & toppfotball? Vi tilbyr enkel
 								og effektiv promotering av egen merkevare på våre populære
-								fotballmål. Økonomi en utfordring for mange klubber, derfor er
-								det fint å ha sponsorer som kan bidra og hjelpe til.
+								fotballmål.<br />
+								Økonomi en utfordring for mange klubber, derfor er det fint å ha
+								sponsorer som kan bidra og hjelpe til.
 							</p>
 						</div>
 						<a class="info__btn">Mere information</a>
@@ -93,13 +104,84 @@
 		<section id="forSpillere">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-12"></div>
+					<div class="col-sm-12">
+						<h2 class="spiller__title">For Spillerene</h2>
+					</div>
 				</div>
 			</div>
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<div class="goals"></div>
+						<div class="spiller__card__wrapper">
+							<div class="spiller__img__wrapper">
+								<img
+									src="./media/LG100Blu.png"
+									alt="Det perfekte fotballmålet for hage og park spill"
+									class="spiller__img"
+								/>
+							</div>
+							<div class="spiller__info__wrapper">
+								<h3 class="spiller__card__title">LG100</h3>
+								<p class="spiller__info__text">
+									Det perfekte fotballmålet for de som elsker å spille fotball!
+									Funtoplay LG100 Original er et norsk designet produkt som
+									passer perfekt til fotballklubber som ønsker å benytte seg av
+									småmål/småspill.
+								</p>
+								<p class="spiller__description__text">B x H= 150 x 95 cm</p>
+								<a class="spiller__info__btn" href="#">Mere information</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="spiller__card__wrapper">
+							<div class="spiller__img__wrapper">
+								<img
+									src="./media/hageMål.png"
+									alt="beste mål for hagespill of trening"
+									class="spiller__img"
+								/>
+							</div>
+							<div class="spiller__info__wrapper">
+								<h3 class="spiller__card__title">LG50 “Hagemålet”</h3>
+								<p class="spiller__info__text">
+									Det perfekte fotballmålet for de som elsker å spille fotball!
+									Funtoplay LG50 Original er et norsk designet produkt som
+									passer perfekt for fotballspill i hagen, på løkka, eller på
+									treningsfeltet for de yngste.
+								</p>
+								<p class="spiller__description__text">B x H= 120 x 75 cm</p>
+								<a class="spiller__info__btn" href="#">Mere information</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="spiller__card__wrapper">
+							<div class="spiller__img__wrapper">
+								<img
+									src="./media/nett.png"
+									alt="nye nett / bytte fotball-nett"
+									class="spiller__img"
+								/>
+							</div>
+							<div class="spiller__info__wrapper">
+								<h3 class="spiller__card__title">Nett</h3>
+								<p class="spiller__info__text">
+									På tide å bytte nett? Vi tilbyr nett i ulike farger med eller
+									uten logo
+								</p>
+								<p class="spiller__description__text"></p>
+								<a class="spiller__info__btn" href="#">Mere information</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -108,14 +190,14 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<h3>For Klubbene</h3>
+						<h3 id="klubb__title">For Klubbene</h3>
 					</div>
 				</div>
 			</div>
-			<div class="container">
+			<div class="container klubb__info">
 				<div class="row">
 					<div class="col-sm-12">
-						<p>
+						<p id="klubb__info__text">
 							Ta kontakt ved bestilling av en pakke med logo på nettene. Du kan
 							velge mellom LG100 eller en kombinasjon av LG100/LG50. Ved kjøp av
 							vanlig klubbpakke (LG100), er logonett inkludert i prisen! Ved
@@ -124,7 +206,52 @@
 					</div>
 				</div>
 			</div>
+			<div class="container-fluid klubb__infoTwo">
+				<div class="row">
+					<div class="col-sm-12">
+						<p id="klubb__info__textTwo">
+							I sammarbeid med NFF “Utstyrsordningen”, kan klubben søke om å få
+							igjen opptil 1/3 av utgiftene ved kjøp over 10.000,-
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="container klubb__img__container">
+				<div class="row">
+					<div class="col-sm-12">
+						<img
+							src="./media/lgOppstilling02-1024x438.png"
+							class="img-fluid img__klubb"
+							alt="Responsive image"
+						/>
+					</div>
+				</div>
+			</div>
 		</section>
+		<footer>
+			<div class="contaiener">
+				<div class="row">
+					<div class="col-sm-4 footer__container">
+						<h5 class="footer__title">OM OSS</h5>
+						<p class="footer__text">
+							Vi ønsker å skape en sunn kultur blant unge der ute og vil derfor
+							gjøre vårt ytterste for å gi barn og unge en mulighet til å spille
+							fotball, når som helst, hvor som helst
+						</p>
+					</div>
+					<div class="col-sm-4 footer__img">
+						<img src="/media/image__footer.png" />
+					</div>
+					<div class="col-sm-4 footer__container">
+						<h5 class="footer__title">SAMFUNNSANSVAR</h5>
+						<p class="footer__text">
+							Funtoplay støtter Landsbyfadders arbeid i Rwanda, med å støtte
+							overgangen fra fossile til fornybare solcelle baserte energikild
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
 		<script src="js/index.js" type="module"></script>
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<script

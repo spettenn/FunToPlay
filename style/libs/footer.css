@@ -1,0 +1,17 @@
+footer {
+	padding: 0.5rem;
+}
+.footer__container {
+	padding: 1rem;
+}
+.footer__title {
+	text-align: center;
+	margin: auto;
+}
+.footer__text {
+	text-align: center;
+}
+.footer__img {
+	display: flex;
+	justify-content: center;
+}

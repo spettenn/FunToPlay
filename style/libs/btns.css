@@ -1,3 +1,32 @@
 .info__btn {
 	background-color: var(--mainColor);
+	text-decoration: none;
+	color: white;
+	height: fit-content;
+	padding: 1rem;
+	font-size: 1.4rem;
+	margin: auto;
+	cursor: pointer;
+	border-radius: 4px;
+}
+.info__btn:hover {
+	color: var(--mainColor);
+	border: 3px solid var(--mainColor);
+	background-color: transparent;
+}
+.spiller__info__btn {
+	background-color: var(--mainColor);
+	text-decoration: none;
+	color: white;
+	height: fit-content;
+	padding: 1rem;
+	font-size: 1.4rem;
+	margin: auto;
+	cursor: pointer;
+	border-radius: 4px;
+}
+.spiller__info__btn:hover {
+	color: var(--mainColor);
+	border: 3px solid var(--mainColor);
+	background-color: transparent;
 }
