@@ -4,3 +4,6 @@
 .light {
 	background-color: white !important;
 }
+.navbar-toggler-icon {
+	color: var(--mainColor) !important;
+}

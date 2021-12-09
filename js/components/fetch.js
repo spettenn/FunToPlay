@@ -18,10 +18,9 @@ export function goalRender(goals) {
 	const productCard = document.createElement('div');
 
 	productCard.classList.add('cards');
-	console.log('Hello', goals.image.formats);
 	productCard.innerHTML = `
 	
-	<img src="${goals.image[15]}"/>
+	<img src="#"/>
         <h1 class="card__title">${goals.name}</h1>
         <p class="card__price">${goals.price}</p>
 		<a class="mere__info" href="productDetails.html?slug=/${goals.slug}">Mere informasjon</a>

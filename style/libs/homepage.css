@@ -4,11 +4,17 @@ body {
 .sponsor__container {
 	height: fit-content;
 	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
 .sponsor {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+.Sponsor__title {
+	color: var(--secondaryColor);
+	font-size: 2rem;
 }
 /* FOR "Spiller" SECTION */
 .spiller__title {
