@@ -35,7 +35,7 @@ export function goalRender(goals) {
 	const cartButton = document.getElementById(button_id);
 	cartButton.onclick = () => {
 		let favorites = getStoredFavorites();
-		const isAdded = favorites.some((item) => item.slug === goals.slug);
+		const isAdded = favorites.find((item) => item.slug === goals.slug);
 
 		if (isAdded) {
 			const index = favorites.indexOf(goals);
@@ -80,7 +80,7 @@ export function goalPackageRender(goalPackage) {
 	const cartButton = document.getElementById(button_id);
 	cartButton.onclick = () => {
 		let favorites = getStoredFavorites();
-		const isAdded = favorites.some((item) => item.slug === goalPackage.slug);
+		const isAdded = favorites.find((item) => item.slug === goalPackage.slug);
 
 		if (isAdded) {
 			const index = favorites.indexOf(goalPackage);
@@ -125,7 +125,7 @@ export function extrasRender(extras) {
 	const cartButton = document.getElementById(button_id);
 	cartButton.onclick = () => {
 		let favorites = getStoredFavorites();
-		const isAdded = favorites.some((item) => item.slug === extras.slug);
+		const isAdded = favorites.find((item) => item.slug === extras.slug);
 
 		if (isAdded) {
 			const index = favorites.indexOf(extras);

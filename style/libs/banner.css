@@ -56,6 +56,7 @@
 	background: url(../../media/banner-spillere.jpg);
 	background-position: center center;
 	background-size: cover;
+	display: flex;
 }
 
 .klubber {
