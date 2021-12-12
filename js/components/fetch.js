@@ -1,6 +1,9 @@
-const goals_URL = 'https://funtoplay.herokuapp.com/Goals';
-const goalPackages_URL = 'https://funtoplay.herokuapp.com/Goal-packages';
-const extras_URL = 'https://funtoplay.herokuapp.com/Extras';
+const goals_URL = 'http://localhost:1337/goals';
+// const goals_URL = 'https://funtoplay.herokuapp.com/goals';
+const goalPackages_URL = 'http://localhost:1337/Goal-packages';
+// const goalPackages_URL = 'https://funtoplay.herokuapp.com/Goal-packages';
+const extras_URL = 'http://localhost:1337/Extras';
+// const extras_URL = 'https://funtoplay.herokuapp.com/Extras';
 
 // Single Goal api fetch with add to local storage
 export async function getGoals() {
@@ -14,8 +17,12 @@ getGoals().then((goals) => goals.forEach(goalRender));
 
 export function goalRender(goals) {
 	const button_id = `cart-button-${goals.slug}`;
+	const slug = `goals-${goals.slug}`;
 
 	const productCard = document.createElement('div');
+	productCard.slug = slug;
+	let favorites = getStoredFavorites();
+	const isFavorited = favorites.some((item) => item.slug === goals.slug);
 
 	productCard.classList.add('cards');
 	productCard.innerHTML = `
@@ -26,22 +33,39 @@ export function goalRender(goals) {
 		<a class="mere__info" href="productDetails.html?slug=/${goals.slug}">Mere informasjon</a>
         <button class="cart__btn" id="${button_id}">
 		<p class="card__text">Legg til i kurven</P>
-        <i class="fas fa-shopping-cart" data-name="${goals.name}" data-slug="${goals.slug}" data-price="${goals.Price}"></i>
+        <i class="far fa-shopping-cart" data-name="${goals.name}" data-slug="${goals.slug}" data-price="${goals.price}"></i>
+		<i class="fas fa-shopping-cart" data-name="${goals.name}" data-slug="${goals.slug}" data-price="${goals.price}"></i
         </button>
     `;
 
 	document.querySelector('.goals').appendChild(productCard);
 
-	const cartButton = document.getElementById(button_id);
+	const filledCart = document.querySelector(`#${slug} .fas.fa-shopping-cart`);
+	const borderCart = document.querySelector(`#${slug} .far.fa-shopping-cart`);
+
+	if (isFavorited) {
+		filledCart.style.display = 'inline';
+		borderCart.style.display = 'none';
+	} else {
+		filledCart.style.display = 'none';
+		borderCart.style.display = 'inline';
+	}
+
+	const cartButton = document.getElementById(`#${slug} #${button_id}`);
 	cartButton.onclick = () => {
-		let favorites = getStoredFavorites();
+		favorites = getStoredFavorites();
 		const isAdded = favorites.find((item) => item.slug === goals.slug);
 
 		if (isAdded) {
-			const index = favorites.indexOf(goals);
+			const index = favorites.indexOf(isAdded);
 			favorites.splice(index, 1);
+
 			favorites = favorites;
+			filledCart.style.display = 'none';
+			borderCart.style.display = 'inline';
 		} else {
+			filledCart.style.display = 'inline';
+			borderCart.style.display = 'none';
 			favorites.push(goals);
 		}
 
