@@ -5,6 +5,18 @@ const goalPackages_URL = 'http://localhost:1337/Goal-packages';
 const extras_URL = 'http://localhost:1337/Extras';
 // const extras_URL = 'https://funtoplay.herokuapp.com/Extras';
 
+export function getStoredFavorites() {
+	let favorites = [];
+	const storedFavorites = localStorage.getItem('favorites');
+
+	if (storedFavorites) {
+		const parsed = JSON.parse(storedFavorites);
+		favorites = parsed;
+	}
+
+	return favorites;
+}
+
 // Single Goal api fetch with add to local storage
 export async function getGoals() {
 	const response = await fetch(goals_URL);
@@ -26,11 +38,10 @@ export function goalRender(goals) {
 
 	productCard.classList.add('cards');
 	productCard.innerHTML = `
-	
-	<img src="#"/>
+	<img class="card__img" src="${goals.images}" />
         <h1 class="card__title">${goals.name}</h1>
         <p class="card__price">${goals.price}</p>
-		<a class="mere__info" href="productDetails.html?slug=/${goals.slug}">Mere informasjon</a>
+		<a class="mere__info" href="../details/goals.html?id=${goals.id}">Mere informasjon</a>
         <button class="cart__btn" id="${button_id}">
 		<p class="card__text">Legg til i kurven</P>
         <i class="far fa-shopping-cart" data-name="${goals.name}" data-slug="${goals.slug}" data-price="${goals.price}"></i>
@@ -40,32 +51,35 @@ export function goalRender(goals) {
 
 	document.querySelector('.goals').appendChild(productCard);
 
-	const filledCart = document.querySelector(`#${slug} .fas.fa-shopping-cart`);
-	const borderCart = document.querySelector(`#${slug} .far.fa-shopping-cart`);
+	const filledHeart = document.querySelector(`#${slug} .far .fa-shopping-cart`);
+	const outlinedHeart = document.querySelector(
+		`#${slug} .fas .fa-shopping-cart`
+	);
 
 	if (isFavorited) {
-		filledCart.style.display = 'inline';
-		borderCart.style.display = 'none';
+		filledHeart.style.display = 'inline';
+		outlinedHeart.style.display = 'none';
 	} else {
-		filledCart.style.display = 'none';
-		borderCart.style.display = 'inline';
+		filledHeart.style.display = 'none';
+		outlinedHeart.style.display = 'inline';
 	}
 
-	const cartButton = document.getElementById(`#${slug} #${button_id}`);
-	cartButton.onclick = () => {
+	const heartButton = document.querySelector(`#${button_id}`);
+	heartButton.onclick = () => {
 		favorites = getStoredFavorites();
-		const isAdded = favorites.find((item) => item.slug === goals.slug);
+		const existingProduct = favorites.find((item) => item.slug === goals.slug);
 
-		if (isAdded) {
-			const index = favorites.indexOf(isAdded);
+		if (existingProduct) {
+			const index = favorites.indexOf(existingProduct);
 			favorites.splice(index, 1);
 
+			// Issues, removing wrong favorites when clicking likes button
 			favorites = favorites;
-			filledCart.style.display = 'none';
-			borderCart.style.display = 'inline';
+			filledHeart.style.display = 'none';
+			outlinedHeart.style.display = 'inline';
 		} else {
-			filledCart.style.display = 'inline';
-			borderCart.style.display = 'none';
+			filledHeart.style.display = 'inline';
+			outlinedHeart.style.display = 'none';
 			favorites.push(goals);
 		}
 
@@ -90,9 +104,10 @@ export function goalPackageRender(goalPackage) {
 
 	productCard.classList.add('cards');
 	productCard.innerHTML = `
+		<img class="card__img" src="${goalPackage.images}" />
         <h1 class="card__title">${goalPackage.name}</h1>
         <p class="card__price">${goalPackage.price}</p>
-		<a class="mere__info" href="productDetails.html?slug=/${goalPackage.slug}">Mere informasjon</a>
+		<a class="mere__info" href="../details/goal-packages.html?id=${goalPackage.id}">Mere informasjon</a>
         <button class="cart__btn" id="${button_id}">
 		<p class="card__text">Legg til i kurven</P>
         <i class="fas fa-shopping-cart" data-name="${goalPackage.name}" data-slug="${goalPackage.slug}" data-price="${goalPackage.Price}"></i>
@@ -135,9 +150,10 @@ export function extrasRender(extras) {
 
 	productCard.classList.add('cards');
 	productCard.innerHTML = `
+	<img class="card__img" src="${extras.images}" />
         <h1 class="card__title">${extras.name}</h1>
         <p class="card__price">${extras.price}</p>
-		<a class="mere__info" href="productDetails.html?slug=/${extras.slug}">Mere informasjon</a>
+		<a class="mere__info" href="../details/extras.html?id=${extras.id}">Mere informasjon</a>
         <button class="cart__btn" id="${button_id}">
 		<p class="card__text">Legg til i kurven</P>
         <i class="fas fa-shopping-cart" data-name="${extras.name}" data-slug="${extras.slug}" data-price="${extras.Price}"></i>
@@ -161,16 +177,4 @@ export function extrasRender(extras) {
 
 		localStorage.setItem('favorites', JSON.stringify(favorites));
 	};
-}
-
-export function getStoredFavorites() {
-	let favorites = [];
-	const storedFavorites = localStorage.getItem('favorites');
-
-	if (storedFavorites) {
-		const parsed = JSON.parse(storedFavorites);
-		favorites = parsed;
-	}
-
-	return favorites;
 }

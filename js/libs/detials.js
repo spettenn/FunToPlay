@@ -1,12 +1,17 @@
+const goals_URL = 'http://localhost:1337/goals/';
+// const goals_URL = 'https://funtoplay.herokuapp.com/goals';
+const goalPackages_URL = 'http://localhost:1337/Goal-packages';
+// const goalPackages_URL = 'https://funtoplay.herokuapp.com/Goal-packages';
+const extras_URL = 'http://localhost:1337/Extras';
+// const extras_URL = 'https://funtoplay.herokuapp.com/Extras';
+
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
-const mainSlug = params.get('slug');
-console.log(mainSlug);
+const slug = params.get('slug');
+console.log(slug);
 async function getGoals() {
 	try {
-		const responseGoals = await fetch(
-			'https://funtoplay.herokuapp.com/Goals' + mainSlug
-		);
+		const responseGoals = await fetch('http://localhost:1337/goals/' + slug);
 		const jsonResults = await responseGoals.json();
 		const value = jsonResults;
 		console.log(value);
@@ -28,7 +33,7 @@ async function getGoalPackages() {
 
 	try {
 		const responseGoalPackages = await fetch(
-			'https://funtoplay.herokuapp.com/Goal-packages' + mainSlug
+			'http://localhost:1337/Goal-packages/' + slug
 		);
 		const jsonResults = await responseGoalPackages.json();
 		const value = jsonResults;
@@ -51,7 +56,7 @@ async function responseExtras() {
 
 	try {
 		const responseExtras = await fetch(
-			'https://funtoplay.herokuapp.com/Extras' + mainSlug
+			'https://funtoplay.herokuapp.com/Extras/' + slug
 		);
 		const jsonResults = await responseExtras.json();
 		const value = jsonResults;

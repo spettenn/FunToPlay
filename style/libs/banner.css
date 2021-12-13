@@ -1,5 +1,6 @@
 .banner {
 	height: fit-content;
+	box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.75);
 }
 .view {
 	bottom: 0;
@@ -63,12 +64,13 @@
 	background: url(../../media/banner-klubber.jpg);
 	background-position: center center;
 	background-size: cover;
+	display: flex;
 }
 .banner__layer {
-	background-color: black;
-	opacity: 60%;
+	background-color: rgba(0, 0, 0, 0.6);
 	margin: auto;
-	height: 24rem;
+	height: fit-content;
+	padding: 2rem;
 	width: 30rem;
 	z-index: 5;
 	display: flex;
@@ -97,4 +99,82 @@
 	text-decoration: none;
 	color: white;
 	cursor: pointer;
+	margin: auto;
+	border: 1px solid var(--mainColor);
+}
+.banner__btn:hover {
+	color: white;
+	background-color: transparent;
+	border: 1px solid var(--mainColor);
+}
+.banner__mobile,
+.inner__spillere,
+.inner__klubber {
+	display: none;
+}
+@media (max-width: 700px) {
+	.view {
+		display: none;
+	}
+	.banner__mobile {
+		display: flex;
+		flex-direction: column;
+		height: fit-content;
+	}
+	.inner__spillere {
+		display: flex;
+		background: url(../../media/banner-klubber.jpg);
+		background-position: center center;
+		background-size: cover;
+		height: 46.5vh;
+		display: flex;
+		justify-content: center;
+		border-bottom: 1px solid black;
+	}
+
+	.inner__klubber {
+		display: flex;
+		background: url(../../media/banner-spillere.jpg);
+		background-position: center center;
+		background-size: cover;
+		height: 46.5vh;
+		display: flex;
+		justify-content: center;
+		border-top: 1px solid black;
+	}
+	.inner__layer {
+		width: 60%;
+		height: 60%;
+		background-color: rgba(0, 0, 0, 0.7);
+		display: flex;
+		flex-direction: column;
+		height: fit-content;
+		padding: 1rem;
+		margin: auto;
+	}
+	.mobile__banner__title {
+		color: white;
+		text-align: center;
+		font-size: 2rem;
+	}
+	.mobile__banner__text {
+		color: white;
+		text-align: center;
+		font-size: 1.3rem;
+	}
+	.mobile__banner__btn {
+		text-align: center;
+		text-decoration: none;
+		background-color: var(--mainColor);
+		color: white;
+		border: 1px solid var(--mainColor);
+		width: 80%;
+		margin: auto;
+		cursor: pointer;
+	}
+	.mobile__banner__btn:hover {
+		color: white;
+		background-color: transparent;
+		border: 1px solid var(--mainColor);
+	}
 }

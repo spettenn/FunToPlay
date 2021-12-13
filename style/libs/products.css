@@ -1,0 +1,10 @@
+.goals {
+	min-height: 22rem;
+	height: fit-content;
+}
+.product__title {
+	height: 2rem;
+}
+.product__container {
+	min-height: 30rem;
+}

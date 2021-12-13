@@ -6,6 +6,8 @@
 @import './libs/footer.css';
 @import './libs/login.css';
 @import './libs/fonts.css';
+@import './libs/products.css';
+@import './libs/details.css';
 
 /* Color pallets and variables  */
 :root {

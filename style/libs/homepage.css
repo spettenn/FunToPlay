@@ -16,6 +16,9 @@ body {
 	color: var(--secondaryColor);
 	font-size: 2rem;
 }
+.sponsor__text {
+	font-size: 1.3rem;
+}
 /* FOR "Spiller" SECTION */
 .spiller__title {
 	text-align: center;
@@ -57,4 +60,13 @@ body {
 }
 .img__klubb {
 	margin: auto;
+}
+.scrollBtn__container {
+	display: flex;
+	flex-direction: row-reverse;
+}
+.arrow {
+	text-decoration: none;
+	color: var(--mainColor);
+	margin: 1rem;
 }
