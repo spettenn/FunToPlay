@@ -64,21 +64,18 @@
 		<span class="hidden">
 			<div class="row cards"></div>
 		</span>
-		<div class="container">
+		
+		<div class="container top__container">
 			<div class="row">
-				<div class="col-sm-12">
-					<div class="page_nav">
-						<label for="searchbox">Search</label>
-						<input type="search" oninput="liveSearch()" id="searchbox" />
+				<div class="col-sm-6">
+					<div class="product__title__container">
+						<h2 class="product__title">Single mål</h2>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<div class="product__title__container">
-						<h2 class="product__title">Mål pakker</h2>
+				<div class="col-sm-6">
+					<div class="page_nav">
+						<input type="search" oninput="liveSearch()" id="searchbox" placeholder="&#xF002; Søk" style="font-family:Arial, FontAwesome" />
+					</div>
 					</div>
 				</div>
 			</div>
@@ -121,8 +118,31 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="cardContainer"></div>
+		<footer>
+			<div class="contaiener">
+				<div class="row">
+					<div class="col-sm-4 footer__container">
+						<h5 class="footer__title">OM OSS</h5>
+						<p class="footer__text">
+							Vi ønsker å skape en sunn kultur blant unge der ute og vil derfor
+							gjøre vårt ytterste for å gi barn og unge en mulighet til å spille
+							fotball, når som helst, hvor som helst
+						</p>
+					</div>
+					<div class="col-sm-4 footer__img">
+						<img src="/media/image__footer.png" />
+					</div>
+					<div class="col-sm-4 footer__container">
+						<h5 class="footer__title">SAMFUNNSANSVAR</h5>
+						<p class="footer__text">
+							Funtoplay støtter Landsbyfadders arbeid i Rwanda, med å støtte
+							overgangen fra fossile til fornybare solcelle baserte energikild
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
 		<script src="js/components/filter.js"></script>
 		<script src="js/index.js" type="module"></script>
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

@@ -1,3 +1,34 @@
+.cart__btn {
+	background-color: var(--mainColor);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	border: 1px solid var(--mainColor);
+	height: 2rem;
+	color: white;
+	padding-top: 3px;
+	font-size: 1.1rem;
+}
+.cart__btn:hover {
+	background-color: transparent;
+	color: var(--mainColor);
+}
+.mere__info {
+	background-color: var(--secondaryColor);
+	display: flex;
+	justify-content: center;
+	height: 2rem;
+	width: 100%;
+	text-decoration: none;
+	color: white;
+	border: none;
+	border: 1px solid var(--secondaryColor);
+	font-size: 1.1rem;
+}
+.mere__info:hover {
+	color: var(--secondaryColor);
+	background-color: transparent;
+}
 .info__btn {
 	background-color: var(--mainColor);
 	text-decoration: none;
@@ -29,4 +60,22 @@
 	color: var(--mainColor);
 	border: 3px solid var(--mainColor);
 	background-color: transparent;
+}
+.to__produkter {
+	text-decoration: none;
+	color: white;
+	border: 1px solid var(--mainColor);
+	padding: 0.5rem;
+	font-size: 1.2rem;
+	background-color: var(--mainColor);
+	border-radius: 4px;
+	cursor: pointer;
+	text-align: center;
+}
+.fa-arrow-left {
+	margin-right: 10px;
+}
+.to__produkter:hover {
+	background-color: transparent;
+	color: var(--mainColor);
 }

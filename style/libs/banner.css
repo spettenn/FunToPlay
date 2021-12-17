@@ -1,6 +1,7 @@
 .banner {
 	height: fit-content;
 	box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+	overflow: hidden;
 }
 .view {
 	bottom: 0;
@@ -13,7 +14,6 @@
 	border-top: none;
 	border-bottom: none;
 }
-
 .left,
 .right {
 	bottom: 0;
@@ -21,12 +21,10 @@
 	position: absolute;
 	top: 0;
 }
-
 .left {
 	left: -5%;
 	right: 50%;
 }
-
 .divider {
 	background-color: black;
 	border-right: solid 1px #000;
@@ -37,12 +35,10 @@
 	top: 0%;
 	z-index: 1;
 }
-
 .right {
 	left: 50%;
 	right: -5%;
 }
-
 .spillere,
 .klubber {
 	bottom: -5%;
@@ -52,14 +48,12 @@
 	top: -5%;
 	transform: skew(5deg);
 }
-
 .spillere {
 	background: url(../../media/banner-spillere.jpg);
 	background-position: center center;
 	background-size: cover;
 	display: flex;
 }
-
 .klubber {
 	background: url(../../media/banner-klubber.jpg);
 	background-position: center center;
@@ -72,10 +66,14 @@
 	height: fit-content;
 	padding: 2rem;
 	width: 30rem;
+	min-height: 23rem;
 	z-index: 5;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+.banner__layer:hover {
+	background-color: rgba(0, 0, 0, 0.8);
 }
 .banner__title {
 	z-index: 6;
@@ -131,7 +129,6 @@
 		justify-content: center;
 		border-bottom: 1px solid black;
 	}
-
 	.inner__klubber {
 		display: flex;
 		background: url(../../media/banner-spillere.jpg);

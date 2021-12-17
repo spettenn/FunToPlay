@@ -1,8 +1,12 @@
 footer {
-	padding: 0.5rem;
+	padding: 1rem;
+	display: flex;
+	justify-content: space-evenly;
+	bottom: 0;
 }
 .footer__container {
 	padding: 1rem;
+	max-width: 30rem;
 }
 .footer__title {
 	text-align: center;
@@ -10,6 +14,8 @@ footer {
 }
 .footer__text {
 	text-align: center;
+	color: var(--secondaryColor);
+	font-size: 1.2rem;
 }
 .footer__img {
 	display: flex;

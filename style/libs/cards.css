@@ -2,9 +2,12 @@
 	display: flex;
 	flex-direction: column;
 	margin: 1rem;
-	height: 20rem;
+	height: 25rem;
 	width: 15rem;
 	text-align: center;
+	justify-content: space-evenly;
+	margin-left: 1rem;
+	margin-right: 1rem;
 }
 .goals {
 	display: flex;
@@ -21,29 +24,17 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 }
-.cart__btn {
-	background-color: var(--mainColor);
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	border: none;
-	height: 2rem;
-	color: white;
-	padding-top: 3px;
-}
-.mere__info {
-	background-color: var(--secondaryColor);
-	display: flex;
-	justify-content: center;
-	height: 2rem;
-	width: 100%;
-	text-decoration: none;
-	color: white;
-	border: none;
-}
 .card__title {
 	color: var(--secondaryColor);
 	font-size: 1.5rem;
+}
+.card__img {
+	width: 100%;
+	height: inherit;
+	object-fit: contain;
+}
+.img__produckt__wrapper {
+	min-height: 15rem;
 }
 .fa-shopping-cart {
 	margin-top: 4px;
@@ -83,6 +74,61 @@
 }
 .spiller__description__text {
 	font-size: 1rem;
+}
+/* cards for featured on homepage*/
+.cards__featured {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	width: 24rem;
+	height: 36rem;
+	overflow: hidden;
+	/*box-shadow: 3px 2px 5px 0px rgba(0, 0, 0, 0.75);*/
+}
+.card__img__featured {
+}
+.card__title__featured {
+	color: white;
+	font-size: 1.3rem;
+	text-align: center;
+}
+.card__desc__featured {
+	color: white;
+	text-align: center;
+	font-size: 1rem;
+}
+.card__desc__price {
+	color: white;
+	text-align: center;
+	font-size: 1.5rem;
+}
+.mere__info__featured {
+	background-color: var(--mainColor);
+	color: white;
+	border: 1px solid var(--mainColor);
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1.2rem;
+}
+.mere__info__featured:hover {
+	background-color: transparent;
+	color: var(--mainColor);
+}
+.cart__btn__featured {
+	background-color: transparent;
+	border: 1px solid var(--mainColor);
+	display: flex;
+	flex-direction: row;
+	color: white;
+	font-size: 1.2rem;
+}
+.cart__btn__featured:hover {
+	color: var(--mainColor);
+}
+.card__text__featured {
+	text-align: center;
+	margin: auto;
 }
 @media (max-width: 800px) {
 	.spiller__card__wrapper {

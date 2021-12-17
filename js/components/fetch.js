@@ -1,21 +1,11 @@
+import { getStoredFavorites } from './saveLocal.js';
+
 const goals_URL = 'http://localhost:1337/goals';
 // const goals_URL = 'https://funtoplay.herokuapp.com/goals';
 const goalPackages_URL = 'http://localhost:1337/Goal-packages';
 // const goalPackages_URL = 'https://funtoplay.herokuapp.com/Goal-packages';
 const extras_URL = 'http://localhost:1337/Extras';
 // const extras_URL = 'https://funtoplay.herokuapp.com/Extras';
-
-export function getStoredFavorites() {
-	let favorites = [];
-	const storedFavorites = localStorage.getItem('favorites');
-
-	if (storedFavorites) {
-		const parsed = JSON.parse(storedFavorites);
-		favorites = parsed;
-	}
-
-	return favorites;
-}
 
 // Single Goal api fetch with add to local storage
 export async function getGoals() {
@@ -33,12 +23,12 @@ export function goalRender(goals) {
 
 	const productCard = document.createElement('div');
 	productCard.slug = slug;
-	let favorites = getStoredFavorites();
-	const isFavorited = favorites.some((item) => item.slug === goals.slug);
 
 	productCard.classList.add('cards');
 	productCard.innerHTML = `
+	
 	<img class="card__img" src="${goals.images}" />
+
         <h1 class="card__title">${goals.name}</h1>
         <p class="card__price">${goals.price}</p>
 		<a class="mere__info" href="../details/goals.html?id=${goals.id}">Mere informasjon</a>
@@ -51,35 +41,16 @@ export function goalRender(goals) {
 
 	document.querySelector('.goals').appendChild(productCard);
 
-	const filledHeart = document.querySelector(`#${slug} .far .fa-shopping-cart`);
-	const outlinedHeart = document.querySelector(
-		`#${slug} .fas .fa-shopping-cart`
-	);
+	const cartButton = document.getElementById(button_id);
+	cartButton.onclick = () => {
+		let favorites = getStoredFavorites();
+		const isAdded = favorites.find((item) => item.slug === goals.slug);
 
-	if (isFavorited) {
-		filledHeart.style.display = 'inline';
-		outlinedHeart.style.display = 'none';
-	} else {
-		filledHeart.style.display = 'none';
-		outlinedHeart.style.display = 'inline';
-	}
-
-	const heartButton = document.querySelector(`#${button_id}`);
-	heartButton.onclick = () => {
-		favorites = getStoredFavorites();
-		const existingProduct = favorites.find((item) => item.slug === goals.slug);
-
-		if (existingProduct) {
-			const index = favorites.indexOf(existingProduct);
-			favorites.splice(index, 1);
-
-			// Issues, removing wrong favorites when clicking likes button
+		if (isAdded) {
+			const index = favorites.indexOf(goals);
+			favorites.splice(index);
 			favorites = favorites;
-			filledHeart.style.display = 'none';
-			outlinedHeart.style.display = 'inline';
 		} else {
-			filledHeart.style.display = 'inline';
-			outlinedHeart.style.display = 'none';
 			favorites.push(goals);
 		}
 

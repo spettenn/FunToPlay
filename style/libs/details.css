@@ -1,0 +1,17 @@
+.details__wrapper {
+}
+.detials__content {
+	display: flex;
+	flex-direction: row;
+}
+.detials__img__container {
+}
+.detials__info__container {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	background-color: #f1f1f1;
+}
+.detials__info__container {
+	border-bottom: 1px solid black;
+}

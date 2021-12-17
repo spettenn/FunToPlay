@@ -63,10 +63,33 @@ body {
 }
 .scrollBtn__container {
 	display: flex;
-	flex-direction: row-reverse;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.goal-packages-featured {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
 }
 .arrow {
 	text-decoration: none;
 	color: var(--mainColor);
 	margin: 1rem;
+}
+.login__btn {
+	background-color: var(--mainColor);
+	text-decoration: none;
+	color: white;
+	height: fit-content;
+	padding: 0.4rem;
+	font-size: 1rem;
+	margin: 1rem;
+	cursor: pointer;
+	border-radius: 4px;
+	border: 3px solid var(--mainColor);
+}
+.login__btn:hover {
+	color: var(--mainColor);
+	border: 3px solid var(--mainColor);
+	background-color: transparent;
 }

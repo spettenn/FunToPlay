@@ -8,6 +8,7 @@
 @import './libs/fonts.css';
 @import './libs/products.css';
 @import './libs/details.css';
+@import './libs/cart.css';
 
 /* Color pallets and variables  */
 :root {

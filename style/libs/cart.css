@@ -1,0 +1,25 @@
+.nav__inner__cart {
+	padding-top: 3rem;
+}
+.product__button_container {
+	padding-top: 1.5rem;
+}
+.cart__container {
+	border: 1px solid var(--mainColor);
+	padding: 2rem;
+	display: flex;
+	flex-direction: row;
+}
+.cart {
+	display: flex;
+	flex-direction: row;
+	height: fit-content;
+	border-bottom: 1px solid var(--mainColor);
+	padding: 1rem;
+	justify-content: space-between;
+}
+.cart__card {
+}
+.cart__img {
+	width: 30%;
+}
