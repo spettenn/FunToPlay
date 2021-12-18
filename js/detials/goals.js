@@ -16,7 +16,7 @@ async function getGoals() {
 		);
 		console.log(response);
 		const jsonResults = await response.json();
-		console.log(jsonResults);
+		console.log(jsonResults[0]);
 
 		document.querySelector('.details__wrapper').innerHTML += `
 <div class="detials__content">
