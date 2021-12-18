@@ -14,7 +14,6 @@ async function getGoals() {
 				},
 			}
 		);
-		console.log(response);
 		const jsonResults = await response.json();
 		console.log(jsonResults[0]);
 
