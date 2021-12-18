@@ -22,10 +22,10 @@ async function getGoals() {
 <div class="detials__img__container">
 <img src="${jsonResults[0].images}" />
 </div>
-<div class="detials__card__title">
-</div>
-<h2>${jsonResults[0].name}</h2>
 <div class="detials__info__container">
+<div class="detials__card__title">
+<h2>${jsonResults[0].name}</h2>
+</div>
 <p>${jsonResults[0].description}</p>
 <p>${jsonResults[0].price}</p>
 </div>

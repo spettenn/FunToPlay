@@ -13,8 +13,12 @@
 	background-color: #f1f1f1;
 }
 .detials__info__container {
-	border-bottom: 1px solid black;
+	display: flex;
+	flex-direction: column;
 }
 .details__title {
 	text-align: center;
+}
+.detials__card__title {
+	border-bottom: 1px solid var(--mainColor);
 }
