@@ -30,7 +30,7 @@ export function goalRender(goals) {
 	<img class="card__img" src="${goals.images}" />
         <h1 class="card__title">${goals.name}</h1>
         <p class="card__price">${goals.price}</p>
-		<a class="mere__info" href="../details/goals.html?id=${goals.id}">Mere informasjon</a>
+		<a class="mere__info" href="https://musing-banach-c2b4b8.netlify.app/js/details/goals.html?id=${goals.id}">Mere informasjon</a>
         <button class="cart__btn" id="${button_id}">
 		<p class="card__text">Legg til i kurven</P>
         <i class="far fa-shopping-cart" data-name="${goals.name}" data-slug="${goals.slug}" data-price="${goals.price}"></i>
