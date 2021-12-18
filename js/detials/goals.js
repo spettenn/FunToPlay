@@ -2,7 +2,7 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 async function getGoals() {
 	const id = params.get('id');
-	console.log({ id });
+	console.log(id);
 
 	try {
 		const response = await fetch(
@@ -16,7 +16,7 @@ async function getGoals() {
 		);
 		console.log(response);
 		const jsonResults = await response.json();
-		console.log({ jsonResults });
+		console.log(jsonResults);
 
 		document.querySelector('.details__wrapper').innerHTML += `
 <div class="detials__content">
