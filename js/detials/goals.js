@@ -24,10 +24,10 @@ async function getGoals() {
 </div>
 <div class="detials__info__container">
 <div class="detials__card__title">
-<h2>${jsonResults[0].name}</h2>
+<h2 class="detials__title__style">${jsonResults[0].name}</h2>
 </div>
 <p>${jsonResults[0].description}</p>
-<p>${jsonResults[0].price}</p>
+<p class="detials__price">pris: ${jsonResults[0].price},- kr</p>
 </div>
 </div>
 `;

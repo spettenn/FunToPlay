@@ -22,3 +22,9 @@
 .detials__card__title {
 	border-bottom: 1px solid var(--mainColor);
 }
+.detials__title__style {
+	color: var(--secondaryColor);
+}
+.detials__price {
+	color: var(--secondaryColor);
+}
