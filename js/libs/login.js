@@ -29,7 +29,6 @@ form.onsubmit = async (event) => {
 	});
 
 	if (!response.ok) {
-		// handle error
 	}
 
 	const { jwt } = await response.json();

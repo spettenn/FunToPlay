@@ -15,3 +15,6 @@
 .detials__info__container {
 	border-bottom: 1px solid black;
 }
+.details__title {
+	text-align: center;
+}

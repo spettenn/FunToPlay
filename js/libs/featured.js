@@ -1,5 +1,5 @@
-const goalPackages_URL = 'http://localhost:1337/Goal-packages';
-// const goalPackages_URL = 'https://funtoplay.herokuapp.com/Goal-packages';
+//const goalPackages_URL = 'http://localhost:1337/Goal-packages';
+const goalPackages_URL = 'https://funtoplay.herokuapp.com/Goal-packages';
 
 async function getGoalPackage() {
 	const response = await fetch(goalPackages_URL);

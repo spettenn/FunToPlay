@@ -4,8 +4,11 @@ console.log('This is user key: ' + strapiAccessToken);
 const form = document.querySelector('#form');
 
 if (!strapiAccessToken) {
-	window.location.replace('/login.html');
+	console.log('There is no JWT token');
+	window.location.replace('../home.html');
 }
+
+alert('Hello, you are sadly not an administrator on this page :(');
 
 form.onsubmit = async function (event) {
 	const data = new FormData(document.querySelector('#form'));

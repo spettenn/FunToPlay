@@ -1,5 +1,5 @@
-const extras_URL = 'http://localhost:1337/Extras';
-// const extras_URL = 'https://funtoplay.herokuapp.com/Extras';
+//const extras_URL = 'http://localhost:1337/Extras';
+const extras_URL = 'https://funtoplay.herokuapp.com/Extras';
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -7,7 +7,9 @@ const id = params.get('id');
 console.log(id);
 async function responseExtras() {
 	try {
-		const responseGoals = await fetch('http://localhost:1337/Extras/' + id);
+		const responseGoals = await fetch(
+			'https://funtoplay.herokuapp.com/Extras/' + id
+		);
 		const jsonResults = await responseGoals.json();
 		const value = jsonResults;
 		console.log(value);

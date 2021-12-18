@@ -1,11 +1,11 @@
 import { getStoredFavorites } from './saveLocal.js';
 
-const goals_URL = 'http://localhost:1337/goals';
-// const goals_URL = 'https://funtoplay.herokuapp.com/goals';
-const goalPackages_URL = 'http://localhost:1337/Goal-packages';
-// const goalPackages_URL = 'https://funtoplay.herokuapp.com/Goal-packages';
-const extras_URL = 'http://localhost:1337/Extras';
-// const extras_URL = 'https://funtoplay.herokuapp.com/Extras';
+//const goals_URL = 'http://localhost:1337/goals';
+const goals_URL = 'https://funtoplay.herokuapp.com/goals';
+//const goalPackages_URL = 'http://localhost:1337/Goal-packages';
+const goalPackages_URL = 'https://funtoplay.herokuapp.com/Goal-packages';
+//const extras_URL = 'http://localhost:1337/Extras';
+const extras_URL = 'https://funtoplay.herokuapp.com/Extras';
 
 // Single Goal api fetch with add to local storage
 export async function getGoals() {
@@ -28,7 +28,6 @@ export function goalRender(goals) {
 	productCard.innerHTML = `
 	
 	<img class="card__img" src="${goals.images}" />
-
         <h1 class="card__title">${goals.name}</h1>
         <p class="card__price">${goals.price}</p>
 		<a class="mere__info" href="../details/goals.html?id=${goals.id}">Mere informasjon</a>
