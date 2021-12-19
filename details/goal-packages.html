@@ -15,54 +15,37 @@
 			crossorigin="anonymous"
 		></script>
 		<link rel="stylesheet" href="/style/main.css" />
-		<title>Document</title>
+		<title>goal package details</title>
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
-			<div class="container">
-				<a class="navbar-brand" href="/home.html">
+		<div class="container nav__inner__cart">
+			<div class="row">
+				<div class="col-sm-4 product__button_container">
+					<a href="../products.html" class="to__produkter"
+						><i class="fas fa-arrow-left"></i>Produkter</a
+					>
+				</div>
+				<div class="col-sm-4">
 					<img
-						src="/media/funtoplayLogo_small.png"
-						alt="logor for fun to play"
-						height="36"
+						alt="logo for funToPlay"
+						src="../media/funtoplayLogo_small.png"
+						class="cart__logo"
 					/>
-				</a>
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav ms-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="./products.html">Produkter</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Montering</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Kjøpsbetingelser</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Kontakt oss</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link nav__cart" href="./cart.html"
-								><i class="fas fa-shopping-cart"></i
-							></a>
-						</li>
-					</ul>
+				</div>
+				<div class="col-sm-4"></div>
+			</div>
+		</div>
+		<main class="details__container">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="details__wrapper"></div>
+						<a class="add__cart">Legg til i kurv</a>
+						<a href="../cart.html" class="to__checkout">Til checkout</a>
+					</div>
 				</div>
 			</div>
-		</nav>
-		Hello there
-		<main></main>
+		</main>
 		<script src="../js/detials/goalsPackages.js"></script>
 	</body>
 </html>

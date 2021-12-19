@@ -1,27 +1,39 @@
-const goalPackages_URL = 'http://localhost:1337/Goal-packages';
-// const goalPackages_URL = 'https://funtoplay.herokuapp.com/Goal-packages';
-
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
-const id = params.get('id');
-console.log(id);
-async function getGoalPackages() {
+async function getGoals() {
+	const id = params.get('id');
+	console.log(id);
+
 	try {
-		const responseGoals = await fetch(
-			'http://localhost:1337/Goal-packages/' + id
+		const response = await fetch(
+			`https://funtoplay.herokuapp.com/goal-packages?id=${id}`,
+			{
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			}
 		);
-		const jsonResults = await responseGoals.json();
-		const value = jsonResults;
-		console.log(value);
-		document.title = jsonResults.name;
-		document.querySelector('main').innerHTML += `
-<div class="#">
-<h3>${value.name}</h3>
-<p>price: ${value.price}</p>
+		const jsonResults = await response.json();
+		console.log(jsonResults[0]);
+
+		document.querySelector('.details__wrapper').innerHTML += `
+<div class="detials__content">
+<div class="detials__img__container">
+<img src="${jsonResults[0].images}" />
+</div>
+<div class="detials__info__container">
+<div class="detials__card__title">
+<h2 class="detials__title__style">${jsonResults[0].name}</h2>
+</div>
+<p>${jsonResults[0].description}</p>
+<p class="detials__price">pris: ${jsonResults[0].price},- kr</p>
+</div>
 </div>
 `;
 	} catch (error) {
+		console.log({ error });
 	} finally {
 	}
 }
-getGoalPackages();
+getGoals();

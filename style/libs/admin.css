@@ -1,4 +1,5 @@
 .form__wrapper {
 	border: 1px solid var(--mainColor);
 	padding: 2rem;
+	margin: 2rem;
 }
