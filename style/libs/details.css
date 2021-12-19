@@ -1,5 +1,8 @@
 .details__wrapper {
 }
+.details__container {
+	padding: 2rem;
+}
 .detials__content {
 	display: flex;
 	flex-direction: row;
@@ -27,4 +30,28 @@
 }
 .detials__price {
 	color: var(--secondaryColor);
+}
+.add__cart {
+	text-decoration: none;
+	background-color: var(--secondaryColor);
+	color: white;
+	padding: 1rem;
+	border: 1px solid var(--secondaryColor);
+	cursor: pointer;
+}
+.to__checkout {
+	background-color: var(--mainColor);
+	color: white;
+	padding: 1rem;
+	text-decoration: none;
+	border: 1px solid var(--mainColor);
+	cursor: pointer;
+}
+.add__cart:hover {
+	background-color: transparent;
+	color: var(--secondaryColor);
+}
+.to__checkout:hover {
+	background-color: transparent;
+	color: var(--mainColor);
 }

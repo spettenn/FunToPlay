@@ -23,3 +23,6 @@
 .cart__img {
 	width: 30%;
 }
+.cart__wrapper {
+	padding: 2rem;
+}

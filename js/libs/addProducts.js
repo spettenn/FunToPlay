@@ -40,39 +40,3 @@ form.onsubmit = async function (event) {
 
 	console.log(await response.json());
 };
-/*
-const headers = {
-	headers: {
-		'Content-Type': 'application/json',
-		Authorization: `Bearer ${localStorage.getItem('jwt')}`,
-	},
-};
-form.onsubmit = async function (event) {
-	event.preventDefault();
-	const name = document.querySelector('.name');
-	const description = document.querySelector('.description');
-	const price = document.querySelector('.price');
-
-	try {
-		let newProduct = {
-			Name: name.value,
-			Description: description.value,
-			Price: price.value,
-		};
-
-		let response = await axios.post(
-			`https://funtoplay.herokuapp.com/Goals`,
-			newProduct,
-			headers
-		);
-		alert('alert-success', 'Car has been created successfully');
-		name.value = '';
-		description.value = '';
-		price.value = '';
-
-		console.log(response);
-	} catch (error) {
-		alert('alert-danger', 'There was an error creating your car');
-	}
-};
-*/

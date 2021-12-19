@@ -13,7 +13,7 @@ function renderFav(data) {
         <p class="fav__price">${data.description}</p>
         <p class="fav__price">${data.price}</p>
         <button type="button" class="delete__button" onclick="deleteAndRefresh(${data.slug})"><i class="far fa-trash-alt"></i></button>
-      </td>
+      
         
     `;
 	document.querySelector('.cart__card').appendChild(productCard);
